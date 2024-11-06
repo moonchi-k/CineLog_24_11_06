@@ -19,4 +19,4 @@
 
 ---
 
-`Home Search Detail MyPage`
+`Home` `Search` `Detail` `MyPage`
