@@ -45,3 +45,4 @@
 ---
 
 - [ ]   Global styled 에 font-family: "Inter", sans-serif; 추가
+- [ ]   PageNotFound 디자인
