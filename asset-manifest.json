@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.3c70d7db.css",
-    "main.js": "/static/js/main.7ca3bd9d.js",
-    "index.html": "/index.html",
-    "main.3c70d7db.css.map": "/static/css/main.3c70d7db.css.map",
-    "main.7ca3bd9d.js.map": "/static/js/main.7ca3bd9d.js.map"
+    "main.css": "/CineLog_24_11_06/static/css/main.3c70d7db.css",
+    "main.js": "/CineLog_24_11_06/static/js/main.ee83c36b.js",
+    "index.html": "/CineLog_24_11_06/index.html",
+    "main.3c70d7db.css.map": "/CineLog_24_11_06/static/css/main.3c70d7db.css.map",
+    "main.ee83c36b.js.map": "/CineLog_24_11_06/static/js/main.ee83c36b.js.map"
   },
   "entrypoints": [
     "static/css/main.3c70d7db.css",
-    "static/js/main.7ca3bd9d.js"
+    "static/js/main.ee83c36b.js"
   ]
 }
