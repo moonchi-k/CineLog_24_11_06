@@ -15,9 +15,9 @@ const Router = () => {
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
         <Route path="/detail/:id" element={<Detail />} />
-        {/* <Route path="/*" element={<PageNotFound />} /> */}
+        <Route path="/*" element={<PageNotFound />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </HashRouter>
   );
 };

@@ -8,11 +8,21 @@ import { W500, noImg } from "../../constant/ImgUrl";
 import PageTitle from "../../components/PageTitle";
 
 const ConWrap = styled.div`
-  margin-top: 100px;
+  margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  row-gap: 50px;
-  column-gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 70px;
+  column-gap: 50px;
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 400px) {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 50px;
+    column-gap: 30px;
+  }
 `;
 const Con = styled.div`
   a {
@@ -24,10 +34,14 @@ const Con = styled.div`
     font-size: 18px;
   }
   height: 415px;
+  @media screen and (max-width: 1024px) {
+    height: 300px;
+  }
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 20px;
   }
 `;
 const Form = styled.form`
@@ -37,11 +51,18 @@ const Form = styled.form`
     height: 50px;
     border: 1px solid rgba(255, 255, 255, 0.4);
     box-sizing: border-box;
+    border-radius: 50px;
     padding: 0 20px;
     &::placeholder {
       font-size: 18px;
     }
   }
+`;
+
+const Text = styled.div`
+  margin-top: 20px;
+  font-size: 18px;
+  color: white;
 `;
 
 const Search = () => {
@@ -65,7 +86,6 @@ const Search = () => {
       console.log("error: " + error);
     }
   };
-  // 엔터쳤을 때 실행하는고
 
   return (
     <>
@@ -77,9 +97,10 @@ const Search = () => {
               required: "영화 제목은 필수입니다.",
             })}
             type="text"
-            placeholder="영화 제목을 검색하세요."
+            placeholder="영화 제목을 입력하세요."
           />
         </Form>
+        {/* <Text> "{term}" 에 대한 검색결과...</Text> */}
         {term && (
           <ConWrap>
             {term.map((data) => (
@@ -101,5 +122,3 @@ const Search = () => {
 };
 
 export default Search;
-
-// https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlz1nScKxKQoZhQOAhiPMx6bjBSwJ9boR0Lw&s

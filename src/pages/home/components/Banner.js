@@ -12,7 +12,7 @@ const Wrap = styled.div`
 `;
 
 const MainBanner = styled.section`
-  height: 65vh;
+  height: 80vh;
   width: 100%;
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -35,7 +35,7 @@ const BannerCon = styled.div`
   position: absolute;
   justify-content: space-around;
   z-index: 400;
-  top: 15%;
+  top: 20%;
   padding: 0 200px;
   /* left: 20%; */
   /* transform: translateX(50%); */
