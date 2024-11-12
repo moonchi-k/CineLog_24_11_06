@@ -41,7 +41,3 @@ Search page UI 구성 |
 | 24.11.11 | Detail page 에 리뷰 작성 창 구성 & Main page에 연결 |
 | 24.11.12 | 모바일 반응형 디자인 수정 및 추가 & 배포 |
 | 24.11.13 | 유지보수 및 배포 확인 & 기능점검 |
-
----
-
-- -[] font-family: "Inter", sans-serif; 설정해야함
