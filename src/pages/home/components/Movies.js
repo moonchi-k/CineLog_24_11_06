@@ -5,13 +5,17 @@ import { mainStyle } from "../../../GlobalStyled";
 import { W500 } from "../../../constant/ImgUrl";
 
 const Container = styled.section`
-  @media screen and (min-width: 450px) {
-    padding: 0 200px;
+  padding: 0 200px;
+  @media screen and (max-width: 700px) {
+    padding: 100px;
+  }
+  @media screen and (max-width: 450px) {
+    padding: 20px;
   }
 `;
 const Title = styled.div`
   margin-top: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   font-size: 22px;
   font-weight: 700;
   color: #fff;
@@ -20,13 +24,18 @@ const Con = styled.div`
   img {
     border-radius: 20px;
     display: block;
-    height: 370px;
+    height: 20%;
+    transition-duration: 0.3s;
+  }
+
+  &:hover img {
+    transform: scale(1.03);
   }
 `;
 
 const params = {
   spaceBetween: 50,
-  slidesPerView: 3.3,
+  slidesPerView: 5,
   breakpoints: {
     1024: {
       spaceBetween: 20,
@@ -34,11 +43,11 @@ const params = {
     },
     640: {
       spaceBetween: 20,
-      slidesPerView: 4.5,
+      slidesPerView: 3.3,
     },
     320: {
       spaceBetween: 20,
-      slidesPerView: 3.3,
+      slidesPerView: 2,
     },
   },
 };

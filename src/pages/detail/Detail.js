@@ -18,7 +18,7 @@ const DWrapper = styled.div`
 `;
 const BgContainer = styled.div`
   height: 100vh;
-  padding: 150px 30%;
+  padding: 150px 25%;
   background: rgb(0, 0, 0);
   background: linear-gradient(
     0deg,
@@ -31,6 +31,10 @@ const BgContainer = styled.div`
   /* opacity: 0.5; */
   position: absolute;
   top: 0;
+
+  @media screen and (max-width: 400px) {
+    padding: 100px 20px;
+  }
 `;
 
 const Container = styled.div`
@@ -39,6 +43,17 @@ const Container = styled.div`
   /* padding: 150px 400px 0 400px; */
   display: flex;
   margin: 0 auto;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    height: 70vh;
+  }
+`;
+
+const DetailCon = styled.div`
+  @media screen and (max-width: 1024px) {
+    display: block;
+  }
 `;
 
 const Bg = styled.div`
@@ -46,10 +61,16 @@ const Bg = styled.div`
   height: 100%;
   border-radius: 20px;
   margin-right: 50px;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    /* height: 100%; */
+  }
 `;
 const TitleWrap = styled.div`
   color: white;
   width: 50%;
+  height: 100%;
   h3 {
     font-size: 40px;
     font-weight: 700;
@@ -60,12 +81,14 @@ const TitleWrap = styled.div`
     font-weight: 300;
   }
   ul {
-    list-style: disc;
-    margin: 15px 0px 10px 20px;
+    list-style: none;
+    margin: 15px 0px 10px 0px;
+    display: flex;
 
     li {
       font-size: 18px;
       margin-bottom: 10px;
+      margin-right: 10px;
     }
   }
 
@@ -75,6 +98,12 @@ const TitleWrap = styled.div`
     margin-top: 50px;
     opacity: 0.7;
     letter-spacing: 0;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    /* height: 100%; */
+    margin-top: 20px;
   }
 `;
 
@@ -90,8 +119,11 @@ const Detail = () => {
       try {
         const detailData = await movieDetail(id);
         setData(detailData);
+      } catch (error) {
+        console.error("Error", error);
+      } finally {
         setIsLoading(false);
-      } catch (error) {}
+      }
     })();
   }, [id]);
 
@@ -103,30 +135,34 @@ const Detail = () => {
         "loading"
       ) : (
         <>
-          <PageTitle title={Data.title}></PageTitle>
+          <PageTitle title={Data?.title || "영화 상세정보"}></PageTitle>
           <DWrapper $coverImg={Data.backdrop_path}></DWrapper>{" "}
           <BgContainer>
-            <Container>
-              <Bg
-                style={{
-                  background: `url(${
-                    Data.poster_path ? ORIGINAL_URL + Data.poster_path : noImg
-                  }) no-repeat center / cover`,
-                }}
-              />
-              <TitleWrap>
-                <h3>{Data.title}</h3>
-                <span>{Math.round(Data.vote_average)}점</span> •{" "}
-                <span>{Data.runtime}분</span> • <span>{Data.release_date}</span>
-                <ul>
-                  {Data.genres.map((genre) => (
-                    <li key={genre.id}>{genre.name}</li>
-                  ))}
-                </ul>
-                <p>{Data.overview}</p>
-              </TitleWrap>
-            </Container>
-            <ReviewBox></ReviewBox>
+            <DetailCon>
+              <Container>
+                <Bg
+                  style={{
+                    background: `url(${
+                      Data.poster_path ? ORIGINAL_URL + Data.poster_path : noImg
+                    }) no-repeat center / cover`,
+                  }}
+                />
+                <TitleWrap>
+                  <h3>{Data.title}</h3>
+                  <span>{Math.round(Data.vote_average)}점</span> •{" "}
+                  <span>{Data.runtime}분</span> •{" "}
+                  <span>{Data.release_date}</span>
+                  <ul>
+                    {Data.genres &&
+                      Data.genres.map((genre) => (
+                        <li key={genre.id}>{genre.name}</li>
+                      ))}
+                  </ul>
+                  <p>{Data.overview}</p>
+                </TitleWrap>
+              </Container>
+              <ReviewBox></ReviewBox>
+            </DetailCon>
           </BgContainer>
         </>
       )}

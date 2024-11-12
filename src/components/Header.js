@@ -15,7 +15,7 @@ const Container = styled.header`
   top: 0;
   left: 0;
   z-index: 500;
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 700px) {
     padding: 20px;
   }
 `;
@@ -25,7 +25,7 @@ const Logo = styled.h3`
   font-weight: 700;
   font-family: "Permanent Marker", serif;
   a {
-    color: crimson;
+    color: #323232;
   }
 `;
 

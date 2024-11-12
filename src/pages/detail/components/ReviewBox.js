@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const WReviewBox = styled.div`
   margin-top: 30px;
-  position: relative;
+  /* position: relative; */
   /* padding: 0 110px; */
   .title {
     /* margin-bottom: 20px; */

@@ -11,8 +11,21 @@ import PageTitle from "../../components/PageTitle";
 // import useScrollTop from "../../lib/useScrollTop";
 
 const Wrap = styled.div`
-  position: relative;
-  top: -10px;
+  /* position: relative;
+  top: -100px;
+
+  @media screen and (max-width: 1024px) {
+    top: -150px;
+    /* padding: 0 100px; */
+  /* }
+  @media screen and (max-width: 700px) {
+    top: -200px;
+    /* padding: 0 100px; */
+
+  /* @media screen and (max-width: 400px) {
+    top: -400px;
+    padding: 0 20px;
+  }  */
 `;
 const Review = styled.div`
   /* position: absolute;
@@ -79,7 +92,7 @@ const Home = () => {
           <Banner Data={nowData} />
           {nowData && (
             <Wrap>
-              <Review>
+              {/* <Review>
                 <div className="title">Reviews</div>
                 <ReviewBox>
                   <div className="reviewbox"></div>
@@ -88,7 +101,7 @@ const Home = () => {
                   <div className="reviewbox"></div>
                   <div className="reviewbox"></div>
                 </ReviewBox>
-              </Review>
+              </Review> */}
               <Movies data={nowData} title={"Now Playing"}></Movies>
               <Movies data={popData} title={"Popular"}></Movies>
               <Movies data={topData} title={"Top Ranked"}></Movies>
