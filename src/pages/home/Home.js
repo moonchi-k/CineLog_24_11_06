@@ -12,7 +12,7 @@ import PageTitle from "../../components/PageTitle";
 
 const Wrap = styled.div`
   position: relative;
-  top: -7vh;
+  top: -10px;
 `;
 const Review = styled.div`
   /* position: absolute;
